@@ -11,7 +11,7 @@ body {
   font-size: 100%;
   line-height: 175%;
   margin: 0 15% 0;
-  background-color: lavender;
+  background: lavender url(images/blackgoose.png) no-repeat center 100px fixed;
 }
 #header {
   margin-top: 0;
@@ -21,23 +21,39 @@ body {
   background:
   url(images/purpledot.png) left top repeat-y
   url(images/purpledot.png) right top repeat-y
-  url(./images/goose_shadow.png) 90% bottom;
-  background-color: rgb(164, 146, 169);
+  url(images/gooseshadow.png);
+  background-color: rgb(177, 166, 180);
 }
 
 a {
   text-decoration: none;
+  color: rgb(201, 201, 235);
 }
+
+a:visited {
+	color: #c8ebce;
+}
+a:focus, a:hover {
+	color: #646165;
+	background-color:  rgb(177, 166, 180);
+}
+a:active {
+	color: #d398bf;
+	background-color:  rgb(177, 166, 180);
+}
+
 
 h1 {
   font: bold 1.5em Georgia, serif;
   text-shadow: .1em .1em .2em gray;
+  color: rgb(251, 198, 231);
 }
 h2 {
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: .5em;
   text-align: center;
+  color: rgb(233, 94, 182);
 }
 dt {
   font-weight: bold;
