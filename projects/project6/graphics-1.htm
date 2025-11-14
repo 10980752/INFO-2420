@@ -34,63 +34,60 @@
 
 </style>
 
-<script language="JavaScript" type="text/javascript">
+<script type="text/javascript">
 
-	PrintButton1 = new Image
-	PrintButton2 = new Image
-	logo1 = new Image
-	logo2 = new Image
-if (document.images) {
-	PrintButton1.src = "images/print5.gif"
-	PrintButton2.src = "images/print6.gif"
-	logo1.src = "images/logo1.jpeg"
-	logo2.src = "images/logo2.jpg"
-}
+	// Preload images used for hover states
+	const PrintButton1 = new Image();
+	const PrintButton2 = new Image();
+	const logo1 = new Image();
+	const logo2 = new Image();
+	if (document.images) {
+		PrintButton1.src = "images/print5.gif";
+		PrintButton2.src = "images/print6.gif";
+		// make sure extension and path match the file on disk
+		logo1.src = "images/logo1.jpg";
+		logo2.src = "images/logo2.jpg";
+	}
 
+	const imgArray = [
+		'Image1Lg.jpg',
+		'Image2Lg.jpg',
+		'Image3Lg.jpg',
+		'Image4Lg.jpg'
+	];
 
-		var imgArray = new Array(
-			'Image1Lg.jpg',
-			'Image2Lg.jpg',
-			'Image3Lg.jpg',
-			'Image4Lg.jpg'
-			
+	const titleArray = [
+		'Dog in the fall',
+		'Girl and her horse',
+		'Boy and his pig',
+		'Dog in a field'
+	];
 
-		);
+	// Use a lowercase, consistent folder name (servers are case-sensitive)
+	const imgPath = "images/fullsize/";
 
+	function swapImage(imgID) {
+		const theImage = document.getElementById('theImage');
+		const textDiv = document.getElementById('bottomText');
+		if (!theImage || !textDiv) return;
 
-		var titleArray = new Array(
-			'Dog in the fall',
-			'Girl and her horse',
-			'Boy and his pig',
-			'Dog in a field'
-			
-		);
-			
-		var imgPath = "Images/FullSize/";
-		
-		function swapImage(imgID) {
+		// ensure we have a number and it's in range
+		imgID = Number(imgID);
+		if (!Number.isInteger(imgID) || imgID < 0 || imgID >= imgArray.length) return;
 
-			var theImage = document.getElementById('theImage');
-			var textDiv = document.getElementById('bottomText');
+		theImage.src = imgPath + imgArray[imgID];
+		textDiv.textContent = titleArray[imgID] || '';
+	}
 
-			var newImg;
-			var textTitle;
-
-			newImg = imgArray[imgID];
-			theImage.src = imgPath + newImg;
-
-			textTitle=titleArray[imgID];
-
-      			textDiv.innerHTML = textTitle;
+	// Keep preloaded references so they're not GC'd immediately
+	const _preloaded = [];
+	function preloadImages() {
+		for (let i = 0; i < imgArray.length; i++) {
+			const tmpImg = new Image();
+			tmpImg.src = imgPath + imgArray[i];
+			_preloaded.push(tmpImg);
 		}
-			
-		function preloadImages() {		
-			for(var i = 0; i < imgArray.length; i++) {
-				var tmpImg = new Image;
-				tmpImg.src = imgPath + imgArray[i];
-			}
-		}
-		
+	}
 
 </script>
 
@@ -101,22 +98,22 @@ if (document.images) {
 <div align="center">
 
 <div>
-	<a href="" onMouseOver="document.PrintButton.src=PrintButton2.src;"
-	onMouseOut="document.PrintButton.src=PrintButton1.src;">
+	<a href="#" onmouseover="document.getElementById('printButton').src=PrintButton2.src;"
+	onmouseout="document.getElementById('printButton').src=PrintButton1.src;">
 
-	<img src="images/print5.gif" width="200" height="50" 
-	name="PrintButton" alt="PrintButton" style="border:none;"/>
+	<img id="printButton" src="images/print5.gif" width="200" height="50" 
+	alt="Print" style="border:none;"/>
 
 	</a>
 </div>
 
 
 <div id="logo">
-	<a href="images/logo2.jpg" onMouseOver="document.logo.src=logo2.src;"
-	onMouseOut="document.logo.src=logo1.src;">
+	<a href="logo1.html" onmouseover="document.getElementById('logoImg').src=logo2.src;"
+	onmouseout="document.getElementById('logoImg').src=logo1.src;">
 
-	<img src="images/logo1.jpg" width="133" height="126" 
-	name="logo" alt="logo" style="border:none;"/>
+	<img id="logoImg" src="images/logo1.jpg" width="133" height="126" 
+	alt="logo" style="border:none;"/>
 
 	</a>
 </div>
@@ -128,16 +125,16 @@ if (document.images) {
 
 
 <div id="thumbs">
-		<img src="Images/Thumbnails/Image1Sm.jpg" alt="Dog in the fall" onmouseover="swapImage(0);" />
-		<img src="Images/Thumbnails/Image2Sm.jpg" alt="Girl and her horse" onmouseover="swapImage(1);" />
-		<img src="Images/Thumbnails/Image3Sm.jpg" alt="Boy and his pig" onmouseover="swapImage(2);" />
-		<img src="Images/Thumbnails/Image4Sm.jpg" alt="Dog in a field" onmouseover="swapImage(3);" />
-		
+	<img src="images/thumbnails/Image1Sm.jpg" alt="Dog in the fall" onmouseover="swapImage(0);" />
+	<img src="images/thumbnails/Image2Sm.jpg" alt="Girl and her horse" onmouseover="swapImage(1);" />
+	<img src="images/thumbnails/Image3Sm.jpg" alt="Boy and his pig" onmouseover="swapImage(2);" />
+	<img src="images/thumbnails/Image4Sm.jpg" alt="Dog in a field" onmouseover="swapImage(3);" />
+        
 </div>
 
 	<div id="image">
 
-		<img id="theImage" src="Images/FullSize/Image1Lg.jpg" alt="Dog in the fall" />
+		<img id="theImage" src="images/fullsize/Image1Lg.jpg" alt="Dog in the fall" />
 		<h3 id="bottomText">Dog in the fall</h3>
 	</div>
 
