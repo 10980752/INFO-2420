@@ -1,0 +1,253 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #D2C2D8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	color: #540166;
+}
+
+header { 
+	width: 900px;
+	height: 200px;
+	background-color: #E4D8EB;
+	text-align: center;
+	padding-top: 10px;
+	margin: auto;
+}
+
+section{
+	width: 900px;
+	background-image: url('images/2colback.jpg');
+	background-repeat: repeat-y;
+	overflow: hidden;
+	margin: auto;
+}
+
+nav {
+	float: left;
+	width: 250px;
+}
+
+article {
+	float: left;
+	width: 650px;
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+	width: 900px;
+	height: 70px;
+	background-color: #E4D8EB;
+	margin: auto;
+}
+	
+.logoleft	{
+	float: left;
+	padding-top: 0px;
+	padding-left: 15px;
+}
+
+nav a {
+	border: 6px inset #620585;
+	background-color: #8C00A0;
+	line-height: 250%;
+	font-weight: bold;
+	font-size: 35px;
+	color: #F4E6FF;
+	text-decoration: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 20px;
+	font-family: KOVEY;
+}
+
+nav a:hover {
+	color: #C280FF;
+	border: 2px outset #CCCCCC
+}
+
+h1.ucas {
+	color: #A100C4;
+	text-align: center;
+	font-size: x-large;
+}
+
+p {
+	color: #370F3A
+}
+
+#thumbs, #image {
+		width: 600px;
+		text-align: center;
+		margin: 0 auto 0 auto;
+		color: #000;
+	}
+
+	#thumbs {
+		margin-top: 10px;
+	}
+
+			
+	#thumbs img {
+		border: solid 1px #000;
+		margin: 5px;
+	}
+
+	#image{
+		height:500px;
+	}
+
+	.instructions{
+		font-style:italic;
+	}
+
+.auto-style {
+	float: left;
+	height: 150px;
+	padding: 0px 15px 10px 80px;
+	margin-left: 29px;
+}
+
+h2 {
+	color: #AE34C4
+}
+
+h3 {
+	color: #7F0391
+}
+
+hr {
+	border-style: solid;
+	border-color: #360138;
+	border-width: 1px;
+}
+
+    @font-face{
+	font-family:'KOVEY';
+	src: url('./KOVEY.eot'); 
+	src: local('KOVEY'), url('./KOVEY.ttf') format('truetype') ;
+    }
+
+h1{
+    font-family: KOVEY;
+    font-size: 25px;
+    text-align: center;
+}
+
+hr{
+    height: 2px;
+    background-color: #a947c7;
+    border: 0;
+}
+
+.left{
+    float: left;
+    padding-right: 10px;
+    border: none;
+}
+
+.right{
+    float: right;
+    padding-left: 10px;
+    border: none;
+}
+
+a:link{
+    color:darkorchid ;
+}
+
+a:visited{
+    color:coral ;
+}
+
+a:hover{
+    color: rgb(89, 29, 145);
+}
+
+hr{
+    height: 2px;
+    background-color: #a947c7;
+    border: 0;
+}
+
+.left{
+    float: left;
+    padding-right: 10px;
+    border: none;
+}
+
+.right{
+    float: right;
+    padding-left: 10px;
+    border: none;
+}
+
+#header{
+    text-align: center;
+}
+
+.center{
+   text-align: center;
+}
+
+table{
+   width: 80%;
+   margin: 0 auto;
+}
+
+table, th, td{
+   border: 3px solid black;
+   border-collapse: separate;
+   border-spacing: 8px;
+   padding: 6px;
+   border-radius: 8px;
+}
+
+caption{
+   font-family: 'KOVEY';
+   color: black;
+   font-weight: bold;
+   background-color:  #ca71e6;
+   border-radius: 10px;
+   border: 2px solid #1d2f20;
+   height: 30px;
+   text-align: center;
+   font-size: 30px;
+}
+
+.courses{
+background-color: #c375ca;
+width: 25%;
+}
+
+th.prices{
+   background-color:  #b206e6;
+   width: 15%;
+}
+
+td{
+   color: #1d2f20;
+   background-color: #feccff;
+   font-size: 15px;
+}
+
+th{
+   border: 3px solid #1d2f20;
+   padding: 5px;
+   border-radius: 5px;
+   font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
